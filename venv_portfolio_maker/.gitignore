@@ -1,0 +1,9 @@
+# ignore
+/include/
+/Lib/
+/Scripts/
+/.idea/
+/portfolio_maker/config/__pycache__
+/portfolio_maker/portfolio/__pycache__
+/portfolio_maker/portfolio/migrations/__pycache__
+/pyvenv.cfg
