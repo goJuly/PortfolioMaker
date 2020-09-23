@@ -1,3 +1,7 @@
 # ignore
 /.idea/
+/venv_portfolio_maker/portfolio_maker/accounts/__pycache__
+/venv_portfolio_maker/portfolio_maker/static/scss/
+/venv_portfolio_maker/portfolio_maker/accounts/migrations/__pycache__
+
 

@@ -2,7 +2,7 @@
 
 {% load static%}
 
-{% block title %}ポートフォリオを作ろう！！ | Portfolio Maker{% endblock %}
+{% block title %}Portfolio Maker | Portfolio Maker{% endblock %}
 
 {% block contents %}
 <!-- Masthead-->
@@ -10,12 +10,12 @@
     <div class="container h-100">
         <div class="row h-100 align-items-center justify-content-center text-center">
             <div class="col-lg-10 align-self-end">
-                <h1 class="text-uppercase text-white font-weight-bold">Your Favorite Source of Free Bootstrap Themes</h1>
+                <h2 class="text-uppercase text-white font-weight-bold">ポートフォリオを簡単に作成</h2>
                 <hr class="divider my-4" />
             </div>
             <div class="col-lg-8 align-self-baseline">
-                <p class="text-white-75 font-weight-light mb-5">Start Bootstrap can help you build better websites using the Bootstrap framework! Just download a theme and start customizing, no strings attached!</p>
-                <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+                <p class="text-white-75 font-weight-light mb-5 base_font_style">自身の情報や制作物を多くの方に知ってもらうためのWebページを簡単に作成することができます。HTMLやCSSなどの専門的なスキルや、サーバの構築といった煩雑な作業は一切不要です。誰でも簡単にポートフォリオを作成することができます。</p>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="{% url 'account_login' %}">Log In</a>
             </div>
         </div>
     </div>
@@ -25,10 +25,10 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
-                <h2 class="text-white mt-0">We've got what you need!</h2>
+                <h2 class="text-uppercase text-white font-weight-bold">シンプルでわかりやすいポートフォリオを手軽に</h2>
                 <hr class="divider light my-4" />
-                <p class="text-white-50 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
-                <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+                <p class="text-white-50 mb-4 base_font_style">登録したときからすぐにポートフォリオを手軽に作成することができます。世界中の方へあなたの情報を簡単に発信することができます。</p>
+                <a class="btn btn-light btn-xl js-scroll-trigger" href="{% url 'account_signup' %}">Sign Up</a>
             </div>
         </div>
     </div>
@@ -36,35 +36,35 @@
 <!-- Services-->
 <section class="page-section" id="services">
     <div class="container">
-        <h2 class="text-center mt-0">At Your Service</h2>
+        <h2 class="text-center mt-0">機能や特徴</h2>
         <hr class="divider my-4" />
         <div class="row">
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="mt-5">
                     <i class="fas fa-4x fa-gem text-primary mb-4"></i>
-                    <h3 class="h4 mb-2">Sturdy Themes</h3>
-                    <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
+                    <h3 class="h4 mb-2 base_font_style">シンプル</h3>
+                    <p class="text-muted mb-0 base_font_style">簡単にポートフォリオを作成することができます。</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="mt-5">
                     <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
-                    <h3 class="h4 mb-2">Up to Date</h3>
-                    <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+                    <h3 class="h4 mb-2">専門知識不要</h3>
+                    <p class="text-muted mb-0">プログラミングの知識などの専門知識は一切不要です。</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="mt-5">
                     <i class="fas fa-4x fa-globe text-primary mb-4"></i>
-                    <h3 class="h4 mb-2">Ready to Publish</h3>
-                    <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
+                    <h3 class="h4 mb-2">情報を発信</h3>
+                    <p class="text-muted mb-0">作成したページは世界中からアクセスすることが可能です。</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="mt-5">
                     <i class="fas fa-4x fa-heart text-primary mb-4"></i>
-                    <h3 class="h4 mb-2">Made with Love</h3>
-                    <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
+                    <h3 class="h4 mb-2">すぐに作れる</h3>
+                    <p class="text-muted mb-0">登録して、すぐにポートフォリオを作成することができます。</p>
                 </div>
             </div>
         </div>

@@ -18,12 +18,13 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
         {% block head%}{% endblock %}
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top base_font_style">
             <div class="container">
                 <a class="navbar-brand base_font_style" href="{% url 'portfolio:index' %}">Portfolio Maker</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -32,12 +33,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item base_font_style {% block active_inquiry %}{% endblock %} ">
-                            <a class="nav-link" href="{% url 'portfolio:inquiry' %}">INQUIRY</a>
+                        <li class="nav-item {% block active_inquiry %}{% endblock %} ">
+                            <a class="nav-link base_font_style" href="#">INQUIRY</a>
                         </li>
                         {% if user.is_authenticated %}
-                        <li class="nav-item base_font_style {% block activate_diary_list %}{% endblock %}">
-                            <a class="nav-link" href="{%url 'portfolio:portfolio_list' %}">Portfolio List</a>
+                        <li class="nav-item {% block activate_diary_list %}{% endblock %}">
+                            <a class="nav-link base_font_style" href="#">Portfolio List</a>
                         </li>
                         {% endif %}
                     </ul>
@@ -47,11 +48,11 @@
                                 <a class="nav-link base_font_style" href="{% url 'account_logout' %}">Log Out</a>
                             </li>
                         {% else %}
-                            <li class="nav-item base_font_style {% block active_signup %}{% endblock %}">
-                                <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
+                            <li class="nav-item {% block active_signup %}{% endblock %}">
+                                <a class="nav-link base_font_style" href="{% url 'account_signup' %}">Sign Up</a>
                             </li>
-                            <li class="nav-item base_font_style {% block active_login %}{% endblock %}">
-                                <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
+                            <li class="nav-item {% block active_login %}{% endblock %}">
+                                <a class="nav-link base_font_style" href="{% url 'account_login' %}">Log In</a>
                             </li>
                         {% endif %}
                     </ul>
@@ -59,22 +60,6 @@
             </div>
         </nav>
         {% block header%}{% endblock %}
-
-        {% if messages %}
-        <div class="container">
-            <div class="row">
-                <div class="my-div-style w-100">
-                    <ul class="messages" style="list-style: none;">
-                        {% for message in messages %}
-                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
-                            {{ message }}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-        </div>
-        {% endif %}
 
         {% block contents%}{% endblock %}
         <!-- Footer-->

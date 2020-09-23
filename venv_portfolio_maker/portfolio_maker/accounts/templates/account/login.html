@@ -1,0 +1,37 @@
+{% extends "base_login.html" %}
+
+{% block title %}サインアップ| Private Diary{% endblock %}
+
+{% block active_signup %}active{% endblock %}
+
+{% block contents %}
+<div id="login">
+    <h3 class="text-center text-white pt-5"></h3>
+      <div class="container">
+          <div id="login-row" class="row justify-content-center align-items-center">
+              <div id="login-column" class="col-md-6">
+                  <div id="login-box" class="col-md-12">
+                      <form id="login-form" class="form" action="" method="post">
+                          <h2 class="text-center text-info">Portfolio Maker</h2>
+                          <h3 class="text-center text-info">ログイン</h3>
+                          {% csrf_token %}
+
+                          {{ form.as_table}}
+
+                          {% if redirect_field_value %}
+                            <input type="input" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" class="form-control"/>
+                          {% endif %}
+
+                            <button class="btn btn-lg btn-info btn-block"  name="Submit" value="Login" type="Submit">Login</button>
+                            <p><a class="text-info" href="{% url 'account_reset_password' %}">パスワードを忘れた場合</a></p>
+                            <div id="register-link" class="text-right">
+                                <a href="{% url 'account_signup' %}" class="text-info">アカウントを作成</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
