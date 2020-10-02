@@ -32,5 +32,5 @@ class PortfolioListView(LoginRequiredMixin, generic.ListView):
     template_name = 'portfolio_list.html'
 
     def get_queryset(self):
-        diaries = Portfolio.objects.filter(user=self.request.user).order_by('-created_at')
-        return diaries
+        portfolios = Portfolio.objects.filter(user=self.request.user).order_by('-created_at')
+        return portfolios
