@@ -1,5 +1,6 @@
 from django import forms
 from django.core.mail import EmailMessage
+from .models import Portfolio
 
 
 class InquiryForm(forms.Form):
@@ -43,3 +44,14 @@ class InquiryForm(forms.Form):
         message = EmailMessage(subject=subject, body=message, from_email=from_email, to=to_list,
                                cc=cc_list)
         message.send()
+        
+
+class PortfolioCreateForm(forms.ModelForm):
+    class Meta:
+        model = Portfolio
+        fields = ('portfolioName', 'userName', 'introduction1', 'introduction2', 'product1', 'productUrl1',)
+
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            for field in self.fields.values():
+                field.widget.attrs['class'] = 'form-control'

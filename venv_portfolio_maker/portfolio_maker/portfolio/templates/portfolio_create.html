@@ -102,38 +102,17 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> 作成したポートフォリオ一覧</h4>
+                <h4 class="card-title"> 新しくポートフォリオを作る</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table">
-                    <thead class=" text-primary">
-                      <th>
-                        portfolioName
-                      </th>
-                      <th>
-                        userName
-                      </th>
-                    </thead>
-                    <tbody>
-                      {% for portfolio in portfolio_list %}
-                      <tr>
-                        <td>
-                          {{ portfolio.portfolioName}}
-                        </td>
-                        <td>
-                          {{ portfolio.userName}}
-                        </td>
-                      </tr>
-                      {% empty %}
-                      <tr>
-                        <td>
-                          Nodata
-                        </td>
-                      </tr>
-                    {% endfor %}
-                    </tbody>
-                  </table>
+                  <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <table class="table">
+                    {{form.as_table}}
+                    </table>
+                    <button class="btn btn-primary" type="submit">作成</button>
+                  </form>
                 </div>
               </div>
             </div>
